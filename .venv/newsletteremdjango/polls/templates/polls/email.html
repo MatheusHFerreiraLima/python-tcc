@@ -38,29 +38,19 @@
         <tr>
             <td style="min-width:320px; max-width: 800px; border-style: solid; border-width: 1px; border-color:rgb(221,221,221); padding-left: 1em; padding-right: 1em;">
                 
-                <div style="padding-left: 1.8em; border-left-width: 1px; border-left-style: dotted; border-left-color:rgb(214,214,214); margin-bottom: 40px" >
-                    <h2 style="font-family: arial,helvetica,sans-serif; font-size: 1.3em;">
-                        <a href="https://ifpb.edu.br" target="_blank" style="text-decoration: none; color: rgb(23,41,56);">
-                        <img src="https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp" alt="imagem p" style="height: 73px; width: 128px; border-radius: 5px; border:0px; float: left; margin-right: 1em; margin-bottom: 0.5em;">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt nobis corporis illo consectetur veritatis
-                        </a>
-                        <p style="font-size: 16px; font-family: 'Times New Roman', Times, serif; font-weight: lighter; color: black;">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta fuga mollitia quo libero odio tenetur repellat facere ab quos.
-                        </p>
-                    </h2>
-                </div>
-
-                <div style="padding-left: 1.8em; border-left-width: 1px; border-left-style: dotted; border-left-color:rgb(214,214,214); margin-bottom: 40px" >
-                    <h2 style="font-family: arial,helvetica,sans-serif; font-size: 1.3em;">
-                        <a href="https://ifpb.edu.br" target="_blank" style="text-decoration: none; color: rgb(23,41,56);">
-                        <img src="https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp" alt="imagem p" style="height: 73px; width: 128px; border-radius: 5px; border:0px; float: left; margin-right: 1em; margin-bottom: 0.5em;">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt nobis corporis illo consectetur veritatis
-                        </a>
-                        <p style="font-size: 16px; font-family: 'Times New Roman', Times, serif; font-weight: lighter; color: black;">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus soluta fuga mollitia quo libero odio tenetur repellat facere ab quos.
-                        </p>
-                    </h2>
-                </div>
+                {% for dado in dados %}
+                    <div style="padding-left: 1.8em; border-left-width: 1px; border-left-style: dotted; border-left-color:rgb(214,214,214); margin-bottom: 40px" >
+                        <h2 style="font-family: arial,helvetica,sans-serif; font-size: 1.3em;">
+                            <a href="{{dado.urlnoticia}}" target="_blank" style="text-decoration: none; color: rgb(23,41,56);">
+                            <img src="{{dado.urlimg}}" alt="{{dado.imgdescricao}}" style="height: 73px; width: 128px; border-radius: 5px; border:0px; float: left; margin-right: 1em; margin-bottom: 0.5em;">
+                            {{dado.noticiatitulo}} ana
+                            </a>
+                            <p style="font-size: 16px; font-family: 'Times New Roman', Times, serif; font-weight: lighter; color: black;">
+                                {{dado.noticiadescricao}}
+                            </p>
+                        </h2>
+                    </div>
+                {% endfor %}
                 
             </td>
         </tr>
@@ -72,7 +62,7 @@
                     <br>
                     CEP: 58382-000
                     <br>
-                    Fone: +55 (83) 991247844 <img id="whatsapp" src="imagens/whatsapp-logo.jpg" alt="WhatsApp" style="width: 18px;
+                    Fone: +55 (83) 991247844 <img id="whatsapp" src="https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/whatsapp-logo.jpg" alt="WhatsApp" style="width: 18px;
                     height: 17px;
                     padding: 0px;">
                     <br>
