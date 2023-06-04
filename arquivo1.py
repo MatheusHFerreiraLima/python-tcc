@@ -1,9 +1,7 @@
-print('Esse é só um teste inicial de um arquivo simples em !Python.')
+import feedparser
 
-dadoss_list = [ 
-    {'urlnoticia': 'https://facebook.com', 'noticiatitulo': 'olha a pedra', 'urlimg': 'https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp' , 'imgdescricao': 'descriçao imagem teste', 'noticiadescricao': 'Deus é fiel!'}, 
+rss = feedparser.parse('https://www.ifpb.edu.br/ifpb/pedrasdefogo/noticias/todas-as-noticias-do-campus-pedras-de-fogo/RSS')
 
-    {'urlnoticia': 'https://facebook.com', 'noticiatitulo': 'olha a pedra', 'urlimg': 'https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp' , 'imgdescricao': 'descriçao imagem teste', 'noticiadescricao': 'Deus é fiel!'}
-]
+print(rss)
 
-print(dadoss_list)
+

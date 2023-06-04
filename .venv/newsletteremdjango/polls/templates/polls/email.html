@@ -41,12 +41,12 @@
                 {% for dado in dados %}
                     <div style="padding-left: 1.8em; border-left-width: 1px; border-left-style: dotted; border-left-color:rgb(214,214,214); margin-bottom: 40px" >
                         <h2 style="font-family: arial,helvetica,sans-serif; font-size: 1.3em;">
-                            <a href="{{dado.urlnoticia}}" target="_blank" style="text-decoration: none; color: rgb(23,41,56);">
-                            <img src="{{dado.urlimg}}" alt="{{dado.imgdescricao}}" style="height: 73px; width: 128px; border-radius: 5px; border:0px; float: left; margin-right: 1em; margin-bottom: 0.5em;">
-                            {{dado.noticiatitulo}} ana
+                            <a href="{{dado.url_noticia}}" target="_blank" style="text-decoration: none; color: rgb(23,41,56);">
+                            <img src="{{dado.img_href}}" alt="{{dado.img_alt}}" style="height: 73px; width: 128px; border-radius: 5px; border:0px; float: left; margin-right: 1em; margin-bottom: 0.5em; font-size: small; font-family: Arial,Helvetica,sans-serif; line-height: 1.5; font-weight: lighter;">
+                            <span style="line-height: 1.3em;">{{dado.titulo_noticia}} </span>
                             </a>
-                            <p style="font-size: 16px; font-family: 'Times New Roman', Times, serif; font-weight: lighter; color: black;">
-                                {{dado.noticiadescricao}}
+                            <p style="padding-top: 16px; font-size: 13.728px;; font-family: arial,helvetica,sans-serif; font-weight: lighter; color: rgb(23,41,56); line-height: 1.8em;">
+                                {{dado.noticia_descricao}}
                             </p>
                         </h2>
                     </div>

@@ -1,17 +1,34 @@
 from django.shortcuts import render
-
-# Create your views here.
-
+import feedparser
 from django.http import  HttpResponse
 
-def dadosemailview(request):
+rss = feedparser.parse('https://www.ifpb.edu.br/ifpb/pedrasdefogo/noticias/todas-as-noticias-do-campus-pedras-de-fogo/RSS')
+
+#nesse código ainda falta o parâmetro 'published' para automatizar o processo de RSS.
+
+def iterate_entries(start_index, end_index):
+    entries = rss.entries[start_index:end_index]
+    data_list = []
+    for entry in entries:
+        data = {
+            'url_noticia': entry['link'],
+            'titulo_noticia': entry['title'],
+            'img_href': None,
+            'img_alt': entry['title'].upper(),
+            'noticia_descricao': entry['summary']
+        }
+        data_list.append(data)
+    return data_list
+
+start_index = 0  # Posição de início
+end_index = 3  # Posição de fim (não inclusiva)
+data = iterate_entries(start_index, end_index)
+
+def dados_email_view(request):
     dados_list = [
-        {'urlnoticia': 'https://facebook.com', 'noticiatitulo': 'olha a pedra', 'urlimg': 'https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp' , 'imgdescricao': 'descriçao imagem teste', 'noticiadescricao': 'AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!'}, 
-
-        {'urlnoticia': 'https://facebook.com', 'noticiatitulo': 'olha a pedra', 'urlimg': 'https://raw.githubusercontent.com/MatheusHFerreiraLima/HTML-CSS/main/imagens/AUTO-F1-ITA-FERRARI-SF-23.webp' , 'imgdescricao': 'descriçao imagem teste', 'noticiadescricao': 'HAHHAHAHHHHHHHHHHHHHHHHHH'},
-
-        {'urlnoticia': None, 'noticiatitulo': None, 'urlimg': None , 'imgdescricao': None, 'noticiadescricao': None},
-        ]
+        
+    ]
+    dados_list.extend(data)  # Adiciona os dados obtidos da função iterate_entries
     return render(request, 'polls/email.html', {'dados': dados_list})
 
 

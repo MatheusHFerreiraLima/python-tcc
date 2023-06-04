@@ -3,5 +3,6 @@ from django.urls import path
 from . import views
 app_name = 'polls' 
 urlpatterns = [
-    path('', views.dadosemailview, name="dadosemailview"),
+    path('', views.dados_email_view, name="dados_email_view"),
+    path('', views.iterate_entries, name="iterate_entries")
 ]
