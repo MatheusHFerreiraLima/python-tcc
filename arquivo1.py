@@ -1,7 +1,15 @@
-import feedparser
+import datetime
+import time
+initial_time = time.time()
+current_datetime = datetime.datetime.now()
 
-rss = feedparser.parse('https://www.ifpb.edu.br/ifpb/pedrasdefogo/noticias/todas-as-noticias-do-campus-pedras-de-fogo/RSS')
+next_thursday = current_datetime + datetime.timedelta((3 - current_datetime.weekday() + 7) % 7)
+time_delta = next_thursday - current_datetime
+time_delta
 
-print(rss)
+#faça um time.sleep de dez segundos para mim, a fim de que teste-o em um for
+
+
+
 
 
