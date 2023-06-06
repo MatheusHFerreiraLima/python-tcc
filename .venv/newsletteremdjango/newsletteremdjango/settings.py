@@ -127,9 +127,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER= config('EMAIL_HOST_USER')
-DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD= config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS= config('EMAIL_USE_TLS')
-EMAIL_PORT= config('EMAIL_PORT')
-EMAIL_HOST= config('EMAIL_HOST')
+EMAIL_HOST_USER='matheus.lima.7@academico.ifpb.edu.br'
+EMAIL_HOST_PASSWORD='cgchseqzrqzcvyks'
+EMAIL_USE_TLS= True
+EMAIL_PORT= 587
+EMAIL_HOST='smtp.gmail.com'
+DEFAULT_FROM_EMAIL="matheus.lima.7@academico.ifpb.edu.br"
